@@ -1,0 +1,6 @@
+[submodule "endpoint-webapp"]
+	path = endpoint-webapp
+	url = https://github.com/surapatknmwk/endpoint-webapp.git
+[submodule "endpoint-service"]
+	path = endpoint-service
+	url = https://github.com/surapatknmwk/endpoint-service.git
