@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: endpoint-postgres
+    environment:
+      POSTGRES_DB: endpoint_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./schema-db.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    restart: "no"
+
+volumes:
+  postgres_data:

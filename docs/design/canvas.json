@@ -1,0 +1,384 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Account.dc.html": {
+      "h": 844,
+      "page": "navbar",
+      "title": "หน้าบัญชี (ย้ายโหมดมืด/ออกจากระบบมาไว้ที่นี่)",
+      "w": 390,
+      "x": 1520,
+      "y": 1020
+    },
+    "AddJob.dc.html": {
+      "h": 980,
+      "page": "screens",
+      "title": "งานจัดส่ง · สร้างงานใหม่",
+      "w": 390,
+      "x": 940,
+      "y": 1264
+    },
+    "Backdrop.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "พื้นหลังจำลอง (ใช้ซ้ำ)",
+      "w": 390,
+      "x": 1960,
+      "y": 0
+    },
+    "CompData.dc.html": {
+      "h": 1280,
+      "page": "components",
+      "title": "ป้าย · การ์ด · ลำดับจุดส่ง",
+      "w": 1280,
+      "x": 0,
+      "y": 1640
+    },
+    "CompForms.dc.html": {
+      "h": 1520,
+      "page": "components",
+      "title": "ปุ่ม · ช่องกรอก · ตัวเลือก",
+      "w": 1280,
+      "x": 1360,
+      "y": 0
+    },
+    "CompNav.dc.html": {
+      "h": 1180,
+      "page": "components",
+      "title": "แถบนำทาง · การแจ้งเตือน",
+      "w": 1280,
+      "x": 1360,
+      "y": 1640
+    },
+    "Foundations.dc.html": {
+      "h": 1340,
+      "page": "components",
+      "title": "พื้นฐาน · สี ตัวอักษร ระยะห่าง",
+      "w": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "JobDetail.dc.html": {
+      "h": 844,
+      "page": "screens",
+      "title": "งานจัดส่ง · รายละเอียดและยืนยันส่ง",
+      "w": 390,
+      "x": 470,
+      "y": 1264
+    },
+    "Jobs.dc.html": {
+      "h": 844,
+      "page": "screens",
+      "title": "งานจัดส่ง · รายการ",
+      "w": 390,
+      "x": 0,
+      "y": 1264
+    },
+    "LoginDesktop.dc.html": {
+      "h": 900,
+      "page": "login",
+      "title": "เข้าสู่ระบบ จอกว้าง",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "LoginMobile.dc.html": {
+      "h": 844,
+      "page": "login",
+      "title": "เข้าสู่ระบบ มือถือ (component · ปรับ state ได้)",
+      "w": 390,
+      "x": 1520,
+      "y": 1020
+    },
+    "LoginStates.dc.html": {
+      "h": 1180,
+      "page": "login",
+      "title": "เข้าสู่ระบบ มือถือ · ปกติ / ผิดพลาด / กำลังโหลด",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 844,
+      "page": "screens",
+      "title": "ออเดอร์ · รายการ",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "NavBar.dc.html": {
+      "h": 76,
+      "page": "navbar",
+      "title": "เมนูล่าง (component ใช้ซ้ำ)",
+      "w": 390,
+      "x": 1990,
+      "y": 1020
+    },
+    "NavDesktop.dc.html": {
+      "h": 900,
+      "page": "navbar",
+      "title": "Navbar จอกว้าง · แถบด้านซ้าย",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "NavMobile.dc.html": {
+      "h": 1820,
+      "page": "navbar",
+      "title": "Navbar มือถือ · สถานะ · การเปลี่ยนเมนู",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "OrderForm.dc.html": {
+      "h": 844,
+      "page": "screens",
+      "title": "ออเดอร์ · เพิ่ม/แก้ไข",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "OrdersSelect.dc.html": {
+      "h": 844,
+      "page": "screens",
+      "title": "ออเดอร์ · โหมดเลือกเพื่อยกเลิก",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "PopApiError.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "ระบบผิดพลาด (แทน ApiErrorModal)",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "PopCancel.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "ยืนยันยกเลิกออเดอร์",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "PopCompleteStop.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "ยืนยันส่งจุดนี้",
+      "w": 390,
+      "x": 0,
+      "y": 1264
+    },
+    "PopDeleteJob.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "ยืนยันลบงาน",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "PopFilter.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "ค้นหาและกรอง (แทน OrderSearchModal)",
+      "w": 390,
+      "x": 470,
+      "y": 1264
+    },
+    "PopLoading.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "กำลังบันทึก (แทน overlay ดำ)",
+      "w": 390,
+      "x": 1410,
+      "y": 2528
+    },
+    "PopLocation.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "เลือกต้นทาง (แทน dropdown 3 ชั้น)",
+      "w": 390,
+      "x": 0,
+      "y": 2528
+    },
+    "PopMap.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "แผนที่ออเดอร์",
+      "w": 390,
+      "x": 1410,
+      "y": 1264
+    },
+    "PopModePicker.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "เลือกรูปแบบสร้างงาน",
+      "w": 390,
+      "x": 940,
+      "y": 1264
+    },
+    "PopOffline.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "ออฟไลน์ + Toast ผิดพลาด",
+      "w": 390,
+      "x": 940,
+      "y": 2528
+    },
+    "PopToast.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "Toast สำเร็จ (แทน alert)",
+      "w": 390,
+      "x": 470,
+      "y": 2528
+    },
+    "PopUnsaved.dc.html": {
+      "h": 844,
+      "page": "popups",
+      "title": "ออกโดยไม่บันทึก",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-25T10:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "page": "login",
+    "view": "canvas"
+  },
+  "notes": {
+    "pr0": {
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "popups",
+      "text": "กล่องยืนยัน · แจ้งผิดพลาด",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "pr1": {
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "popups",
+      "text": "แผ่นล่าง (Bottom sheet แทน Modal)",
+      "w": 240,
+      "x": 0,
+      "y": 964
+    },
+    "pr2": {
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "popups",
+      "text": "เลือกพื้นที่ · แจ้งผล · โหลด",
+      "w": 240,
+      "x": 0,
+      "y": 2228
+    },
+    "t1": {
+      "kind": "title1",
+      "maxW": 1330,
+      "page": "screens",
+      "text": "ออเดอร์",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t2": {
+      "kind": "title1",
+      "maxW": 1330,
+      "page": "screens",
+      "text": "งานจัดส่ง",
+      "w": 240,
+      "x": 0,
+      "y": 964
+    },
+    "tcomp": {
+      "kind": "title1",
+      "maxW": 2640,
+      "page": "components",
+      "text": "Endpoint Design System",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "tlogin": {
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "login",
+      "text": "หน้าเข้าสู่ระบบ",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "tnav": {
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "navbar",
+      "text": "Navbar · การเปลี่ยนเมนู",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "LoginMobile.dc.html",
+    "NavBar.dc.html",
+    "Backdrop.dc.html",
+    "Main.dc.html",
+    "OrdersSelect.dc.html",
+    "OrderForm.dc.html",
+    "Jobs.dc.html",
+    "JobDetail.dc.html",
+    "AddJob.dc.html",
+    "Foundations.dc.html",
+    "CompForms.dc.html",
+    "CompData.dc.html",
+    "CompNav.dc.html",
+    "PopCancel.dc.html",
+    "PopDeleteJob.dc.html",
+    "PopApiError.dc.html",
+    "PopUnsaved.dc.html",
+    "PopCompleteStop.dc.html",
+    "PopFilter.dc.html",
+    "PopModePicker.dc.html",
+    "PopMap.dc.html",
+    "PopLocation.dc.html",
+    "PopToast.dc.html",
+    "PopOffline.dc.html",
+    "PopLoading.dc.html",
+    "NavMobile.dc.html",
+    "NavDesktop.dc.html",
+    "Account.dc.html",
+    "LoginStates.dc.html",
+    "LoginDesktop.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "screens",
+      "name": "หน้าจอหลัก"
+    },
+    {
+      "id": "components",
+      "name": "Components"
+    },
+    {
+      "id": "popups",
+      "name": "Pop-ups & Alerts"
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar"
+    },
+    {
+      "id": "login",
+      "name": "Login"
+    }
+  ],
+  "title": "Endpoint UI Redesign"
+}

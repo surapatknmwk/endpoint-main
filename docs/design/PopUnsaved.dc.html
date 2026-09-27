@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>ออกโดยไม่บันทึก</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; font-family: 'Sarabun', sans-serif; color: #17191C">
+<div style="position: absolute; left: 0; top: 0"><dc-import name="Backdrop" kind="jobs" hint-size="390px,844px"></dc-import></div>
+<div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: rgba(23,25,28,0.5)"></div>
+
+<section role="alertdialog" aria-label="ออกโดยไม่บันทึก" style="position: absolute; left: 20px; right: 20px; top: 240px; background: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 16px 40px rgba(23,25,28,0.24)">
+<span style="width: 48px; height: 48px; border-radius: 24px; background: #FDF1D8; color: #7A4E00; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h0"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 22px; font-weight: 700">ออกโดยไม่บันทึก?</h2>
+<p style="margin: 0; font-size: 15px; color: #4F535A; line-height: 1.55">งานนี้ยังไม่ได้บันทึก จุดส่งที่เลือกไว้ 2 จุดจะหายไป</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px">
+<button type="button" style="height: 52px; border: 0; border-radius: 12px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); color: #FFFFFF; font-size: 16px; font-weight: 600">กลับไปทำต่อ</button>
+<button type="button" style="height: 52px; border: 0; border-radius: 12px; background: transparent; color: #B42318; font-size: 16px; font-weight: 600">ออกโดยไม่บันทึก</button>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

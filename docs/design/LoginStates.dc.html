@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>เข้าสู่ระบบ · สถานะ</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1180px; box-sizing: border-box; padding: 64px; background: #F6F6FA; font-family: 'Sarabun', sans-serif; color: #17191C; display: flex; flex-direction: column; gap: 36px">
+<header style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; background: linear-gradient(90deg, #3346C4, #5B34C9); -webkit-background-clip: text; background-clip: text; color: transparent">ENDPOINT DESIGN SYSTEM</span>
+<h1 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 40px; font-weight: 700; line-height: 1.2">เข้าสู่ระบบ · 3 สถานะ</h1>
+</header>
+<div style="display: flex; gap: 60px">
+<sc-for list="{{states}}" as="s" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 14px; width: 390px">
+<div style="width: 390px; height: 844px; border-radius: 28px; overflow: hidden; box-shadow: 0 20px 50px rgba(23,25,28,0.14)"><dc-import name="LoginMobile" state="{{s.key}}" hint-size="390px,844px"></dc-import></div>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">{{s.name}}</span><span style="font-size: 14px; color: #4F535A; line-height: 1.5">{{s.note}}</span></span>
+</div>
+</sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+states: [
+{ key: 'default', name: 'ปกติ', note: 'label อยู่นอกช่อง · มีไอคอนบอกชนิดช่อง · ปุ่มดูรหัสผ่าน' },
+{ key: 'error', name: 'เข้าสู่ระบบไม่สำเร็จ', note: 'ข้อความอยู่บนฟอร์ม บอกวิธีแก้ · ชื่อผู้ใช้ยังอยู่ ไม่ต้องพิมพ์ใหม่' },
+{ key: 'loading', name: 'กำลังเข้าสู่ระบบ', note: 'ปุ่มหมุนพร้อมข้อความ · กดซ้ำไม่ได้ (ไม่หน่วง 800ms แบบเดิม)' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

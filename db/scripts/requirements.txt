@@ -1,0 +1,7 @@
+requests>=2.31
+psycopg2-binary>=2.9
+
+# macOS system Python is built against LibreSSL, not OpenSSL 1.1.1+, which
+# makes urllib3 v2 print a NotOpenSSLWarning on every request. Pin to v1 to
+# silence it -- v1 works fine with LibreSSL, we don't need any v2-only feature.
+urllib3<2

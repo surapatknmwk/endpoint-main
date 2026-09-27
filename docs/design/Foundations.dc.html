@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Foundations</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input,textarea{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1340px; box-sizing: border-box; padding: 64px; background: #F6F6FA; font-family: 'Sarabun', sans-serif; color: #17191C; display: flex; flex-direction: column; gap: 48px">
+
+<header style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; background: linear-gradient(90deg, #3346C4, #5B34C9); -webkit-background-clip: text; background-clip: text; color: transparent">ENDPOINT DESIGN SYSTEM</span>
+<h1 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 40px; font-weight: 700; line-height: 1.2">พื้นฐาน · Foundations</h1>
+<p style="margin: 0; font-size: 16px; color: #4F535A">สี ตัวอักษร ระยะห่าง มุมโค้ง และเงา ที่ทุกหน้าจอใช้ร่วมกัน</p>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">01</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 24px; font-weight: 700">สี</h2></div>
+
+<div style="height: 112px; border-radius: 16px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); padding: 24px 28px; box-sizing: border-box; display: flex; align-items: flex-end; justify-content: space-between; color: #FFFFFF">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 22px; font-weight: 700">Primary gradient</span><span style="font-size: 14px; opacity: 0.9">ปุ่มหลัก · FAB · แถบความคืบหน้า · จุดถัดไป · wordmark</span></div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px">linear-gradient(135deg, #3346C4 → #5B34C9)</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<div style="background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: #5B5F66">แบรนด์</span>
+<sc-for list="{{brand}}" as="c" hint-placeholder-count="6">
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 44px; height: 44px; border-radius: 10px; background: {{c.hex}}; border: 1px solid rgba(23,25,28,0.08); flex-shrink: 0"></span><span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 600">{{c.name}}</span><span style="font-size: 13px; color: #5B5F66"><span style="font-family: 'IBM Plex Mono', monospace">{{c.hex}}</span> · {{c.use}}</span></span></div>
+</sc-for>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: #5B5F66">กลาง (Neutral)</span>
+<sc-for list="{{neutral}}" as="c" hint-placeholder-count="7">
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 44px; height: 44px; border-radius: 10px; background: {{c.hex}}; border: 1px solid rgba(23,25,28,0.08); flex-shrink: 0"></span><span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 600">{{c.name}}</span><span style="font-size: 13px; color: #5B5F66"><span style="font-family: 'IBM Plex Mono', monospace">{{c.hex}}</span> · {{c.use}}</span></span></div>
+</sc-for>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: #5B5F66">สถานะ (ตัวอักษร / พื้น)</span>
+<sc-for list="{{status}}" as="c" hint-placeholder-count="5">
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 44px; height: 44px; border-radius: 10px; background: {{c.bg}}; color: {{c.fg}}; border: 1px solid rgba(23,25,28,0.08); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans Thai', sans-serif; font-weight: 700; font-size: 16px">ก</span><span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 600">{{c.name}}</span><span style="font-size: 13px; color: #5B5F66"><span style="font-family: 'IBM Plex Mono', monospace">{{c.fg}} / {{c.bg}}</span></span></span></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px">
+<section style="background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">02</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 24px; font-weight: 700">ตัวอักษร</h2><span style="font-size: 14px; color: #5B5F66">หัวข้อ IBM Plex Sans Thai · เนื้อหา Sarabun</span></div>
+<sc-for list="{{type}}" as="t" hint-placeholder-count="7">
+<div style="display: flex; align-items: center; gap: 24px; padding: 10px 0; border-top: 1px solid #EDEDF3">
+<span style="width: 150px; flex-shrink: 0; display: flex; flex-direction: column"><span style="font-size: 14px; font-weight: 600">{{t.name}}</span><span style="font-size: 12px; color: #5B5F66; font-family: 'IBM Plex Mono', monospace">{{t.spec}}</span></span>
+<span style="font-family: {{t.family}}; font-size: {{t.size}}; font-weight: {{t.weight}}; letter-spacing: {{t.ls}}; line-height: 1.35">{{t.sample}}</span>
+</div>
+</sc-for>
+</section>
+
+<div style="display: flex; flex-direction: column; gap: 24px">
+<section style="background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">03</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 20px; font-weight: 700">ระยะห่าง (4px grid)</h2></div>
+<sc-for list="{{space}}" as="s" hint-placeholder-count="7">
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 36px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4F535A">{{s.v}}</span><span style="height: 12px; width: {{s.w}}; border-radius: 3px; background: #DCDBFA"></span><span style="font-size: 13px; color: #5B5F66">{{s.use}}</span></div>
+</sc-for>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">04</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 20px; font-weight: 700">มุมโค้ง · เงา</h2></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{radius}}" as="r" hint-placeholder-count="6">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 56px; height: 40px; background: #EEEBFD; border: 1.5px solid #3346C4; border-radius: {{r.v}}"></span><span style="font-size: 12px; color: #4F535A; text-align: center">{{r.label}}</span></div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 12px; margin-top: 4px">
+<div style="flex-grow: 1; flex-basis: 0; height: 64px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E3E2EC; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4F535A; text-align: center">การ์ด<br>เส้นขอบ ไม่มีเงา</div>
+<div style="flex-grow: 1; flex-basis: 0; height: 64px; border-radius: 12px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(23,25,28,0.12); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4F535A; text-align: center">แท็บที่เลือก<br>0 1 2 / 12%</div>
+<div style="flex-grow: 1; flex-basis: 0; height: 64px; border-radius: 12px; background: #FFFFFF; box-shadow: 0 6px 16px rgba(51,70,196,0.30); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4F535A; text-align: center">FAB<br>0 6 16 / 30%</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1340}}'>
+class Component extends DCLogic {
+renderVals() {
+const plex = "'IBM Plex Sans Thai', sans-serif";
+const sara = "'Sarabun', sans-serif";
+return {
+brand: [
+{ hex: '#3346C4', name: 'Primary', use: 'ตัวอักษร ไอคอน เส้นขอบที่เลือก' },
+{ hex: '#5B34C9', name: 'Secondary', use: 'ปลายไล่เฉด' },
+{ hex: '#26369B', name: 'Primary hover', use: 'hover / pressed' },
+{ hex: '#DCDBFA', name: 'Tint 300', use: 'วงแหวนจุดถัดไป' },
+{ hex: '#E9E6FC', name: 'Tint 200', use: 'เมนูที่เลือก' },
+{ hex: '#F4F3FE', name: 'Tint 50', use: 'การ์ดที่ถูกเลือก' }
+],
+neutral: [
+{ hex: '#17191C', name: 'Ink', use: 'หัวข้อ ตัวอักษรหลัก' },
+{ hex: '#3A3E44', name: 'Ink 2', use: 'label ฟอร์ม' },
+{ hex: '#5B5F66', name: 'Muted', use: 'คำอธิบาย caption' },
+{ hex: '#CCCBDA', name: 'Border strong', use: 'ช่องกรอก ปุ่มรอง' },
+{ hex: '#E3E2EC', name: 'Border', use: 'การ์ด เส้นแบ่ง' },
+{ hex: '#F6F6FA', name: 'Background', use: 'พื้นหลังหน้า' },
+{ hex: '#FFFFFF', name: 'Surface', use: 'การ์ด แผ่นล่าง' }
+],
+status: [
+{ name: 'ใหม่ / ข้อมูล', fg: '#3346C4', bg: '#EEEBFD' },
+{ name: 'รอจัดส่ง / เตือน', fg: '#7A4E00', bg: '#FDF1D8' },
+{ name: 'กำลังจัดส่ง', fg: '#0B5A8A', bg: '#E0F0FB' },
+{ name: 'ส่งแล้ว / สำเร็จ', fg: '#1E6B3A', bg: '#E2F2E7' },
+{ name: 'ยกเลิก / อันตราย', fg: '#B42318', bg: '#FDE8E6' }
+],
+type: [
+{ name: 'Display', spec: '28 / 700 Plex', family: plex, size: '28px', weight: 700, ls: '0', sample: 'ออเดอร์' },
+{ name: 'Title', spec: '20 / 700 Plex', family: plex, size: '20px', weight: 700, ls: '0', sample: 'รอบเช้า · แม่ริม' },
+{ name: 'Card title', spec: '17 / 600 Plex', family: plex, size: '17px', weight: 600, ls: '0', sample: 'คุณสมศรี ใจดี' },
+{ name: 'Body', spec: '16 / 400 Sarabun', family: sara, size: '16px', weight: 400, ls: '0', sample: '99/1 ซ.5 ถ.ห้วยแก้ว ตรงข้ามร้านกาแฟ' },
+{ name: 'Secondary', spec: '14 / 400 Sarabun', family: sara, size: '14px', weight: 400, ls: '0', sample: 'ต.สุเทพ อ.เมืองเชียงใหม่ จ.เชียงใหม่' },
+{ name: 'Label', spec: '14 / 600 Sarabun', family: sara, size: '14px', weight: 600, ls: '0', sample: 'ชื่อลูกค้า' },
+{ name: 'Caption', spec: '13 / 400 Sarabun', family: sara, size: '13px', weight: 400, ls: '0', sample: 'JOB-0021 · นัดส่ง 25 ก.ย.' },
+{ name: 'Overline', spec: '12 / 700 +4%', family: sara, size: '12px', weight: 700, ls: '0.04em', sample: 'จุดถัดไป' }
+],
+space: [
+{ v: '4', w: '4px', use: 'ไอคอน-ข้อความในป้าย' },
+{ v: '8', w: '8px', use: 'ระหว่างปุ่มในแถว' },
+{ v: '12', w: '12px', use: 'ช่องว่างในการ์ด' },
+{ v: '16', w: '16px', use: 'padding การ์ด' },
+{ v: '20', w: '20px', use: 'ขอบจอซ้าย-ขวา' },
+{ v: '24', w: '24px', use: 'ระหว่างกลุ่ม' },
+{ v: '32', w: '32px', use: 'ระหว่าง section' }
+],
+radius: [
+{ v: '6px', label: '6 · ป้าย' },
+{ v: '10px', label: '10 · ช่องกรอก' },
+{ v: '12px', label: '12 · ปุ่ม' },
+{ v: '14px', label: '14 · การ์ด' },
+{ v: '20px 20px 0 0', label: '20 · แผ่นล่าง' },
+{ v: '999px', label: 'pill · ชิป FAB' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

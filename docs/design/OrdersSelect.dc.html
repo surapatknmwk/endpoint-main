@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>เลือกออเดอร์เพื่อยกเลิก</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #F6F6FA; font-family: 'Sarabun', sans-serif; color: #17191C; box-sizing: border-box">
+
+<header style="padding: 20px 20px 12px; display: flex; flex-direction: column; gap: 14px; background: #FFFFFF; border-bottom: 1px solid #E3E2EC">
+<div style="display: flex; align-items: center; gap: 8px">
+<button type="button" aria-label="ออกจากโหมดเลือก" style="width: 44px; height: 44px; margin-left: -10px; border: 0; background: transparent; border-radius: 22px; display: flex; align-items: center; justify-content: center; color: #17191C">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+</button>
+<h1 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 22px; font-weight: 700">เลือกแล้ว 2 รายการ</h1>
+<button type="button" style="margin-left: auto; height: 40px; padding: 0 10px; border: 0; background: transparent; font-size: 15px; font-weight: 600; color: #3346C4">เลือกทั้งหมด</button>
+</div>
+<div style="display: flex; gap: 8px; align-items: flex-start; padding: 10px 12px; background: #F2F2F8; border-radius: 10px; font-size: 13px; color: #4F535A; line-height: 1.5">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink: 0; margin-top: 2px" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h0"></path></svg>
+<span>เลือกได้เฉพาะออเดอร์ “ใหม่” — ออเดอร์ที่ถูกจัดเข้างานแล้วจะเลือกไม่ได้</span>
+</div>
+</header>
+
+<main style="padding: 14px 20px 0; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{orders}}" as="o" hint-placeholder-count="4">
+<label style="display: flex; gap: 14px; align-items: flex-start; background: {{o.bg}}; border: {{o.border}}; border-radius: 14px; padding: 14px 16px">
+<input type="checkbox" checked="{{o.sel}}" aria-label="เลือก {{o.name}}" style="width: 22px; height: 22px; margin: 2px 0 0; accent-color: #3346C4; flex-shrink: 0">
+<span style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="display: flex; align-items: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 6px; background: #F0F0F6; font-size: 12px; font-weight: 600; color: #3A3E44"><span style="width: 8px; height: 8px; border-radius: 4px; background: {{o.dot}}"></span>{{o.platform}}</span>
+<span style="font-size: 13px; color: #6B6F76">{{o.code}}</span>
+</span>
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 17px; font-weight: 600">{{o.name}}</span>
+<span style="font-size: 14px; color: #4F535A">{{o.area}}</span>
+</span>
+</label>
+</sc-for>
+</main>
+
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px 24px; background: #FFFFFF; border-top: 1px solid #E3E2EC; display: flex; flex-direction: column; gap: 8px">
+<button type="button" style="height: 52px; border: 0; border-radius: 12px; background: #B42318; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>ยกเลิกออเดอร์ 2 รายการ</button>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+const on = { bg: '#F4F3FE', border: '1.5px solid #3346C4', sel: true };
+const off = { bg: '#FFFFFF', border: '1px solid #E3E2EC', sel: false };
+return {
+orders: [
+Object.assign({ platform: 'LINE', dot: '#2E9E5B', code: '#OD-0142', name: 'คุณสมศรี ใจดี', area: 'ต.สุเทพ อ.เมืองเชียงใหม่' }, on),
+Object.assign({ platform: 'Facebook', dot: '#2F5BD3', code: '#OD-0141', name: 'คุณวิชัย แสงทอง', area: 'ต.ริมใต้ อ.แม่ริม' }, off),
+Object.assign({ platform: 'โทร', dot: '#C77A12', code: '#OD-0139', name: 'ร้านป้าแดง', area: 'ต.หนองหอย อ.เมืองเชียงใหม่' }, on),
+Object.assign({ platform: 'LINE', dot: '#2E9E5B', code: '#OD-0137', name: 'คุณอำไพ ศรีสุข', area: 'ต.ช้างเผือก อ.เมืองเชียงใหม่' }, off),
+Object.assign({ platform: 'Facebook', dot: '#2F5BD3', code: '#OD-0135', name: 'คุณประยูร มีสุข', area: 'ต.สันผีเสื้อ อ.เมืองเชียงใหม่' }, off)
+]
+};
+}
+}
+</script>
+</body>
+</html>

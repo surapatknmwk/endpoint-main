@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>แผนที่ออเดอร์</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; font-family: 'Sarabun', sans-serif; color: #17191C">
+<div style="position: absolute; left: 0; top: 0"><dc-import name="Backdrop" kind="orders" hint-size="390px,844px"></dc-import></div>
+<div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: rgba(23,25,28,0.5)"></div>
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

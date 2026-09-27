@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Navbar · มือถือ</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1820px; box-sizing: border-box; padding: 64px; background: #F6F6FA; font-family: 'Sarabun', sans-serif; color: #17191C; display: flex; flex-direction: column; gap: 44px">
+
+<header style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; background: linear-gradient(90deg, #3346C4, #5B34C9); -webkit-background-clip: text; background-clip: text; color: transparent">ENDPOINT DESIGN SYSTEM</span>
+<h1 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 40px; font-weight: 700; line-height: 1.2">Navbar · มือถือ</h1>
+<p style="margin: 0; font-size: 16px; color: #4F535A">เมนูล่างแทน navbar ด้านบน + hamburger · กดครั้งเดียวสลับเมนูได้ · นิ้วโป้งเอื้อมถึง</p>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">N1</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 24px; font-weight: 700">3 เมนูหลัก</h2><span style="font-size: 14px; color: #5B5F66">ไอคอน + ข้อความเสมอ · เมนูที่อยู่ = พื้นครามอ่อน ตัวหนา</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="width: 390px; height: 230px; border-radius: 16px; overflow: hidden; border: 1px solid #E3E2EC; background: #F6F6FA; display: flex; flex-direction: column">
+<div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #3346C4">ENDPOINT</span>
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 26px; font-weight: 700; margin-top: -6px">{{t.title}}</span>
+<span style="height: 44px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E3E2EC"></span>
+</div>
+<dc-import name="NavBar" active="{{t.key}}" hint-size="390px,76px"></dc-import>
+</div>
+<span style="font-size: 14px; color: #3A3E44"><strong>{{t.title}}</strong> — {{t.desc}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">N2</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 24px; font-weight: 700">ตอนเปลี่ยนเมนู</h2><span style="font-size: 14px; color: #5B5F66">ตัวอย่าง: อยู่หน้าออเดอร์ แล้วกด “งานจัดส่ง”</span></div>
+<div style="display: flex; align-items: flex-start; gap: 12px">
+<sc-for list="{{flow}}" as="f" hint-placeholder-count="3">
+<div style="display: flex; align-items: flex-start; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 10px; width: 390px">
+<div style="width: 390px; height: 230px; border-radius: 16px; overflow: hidden; border: 1px solid #E3E2EC; background: #F6F6FA; display: flex; flex-direction: column">
+<div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; opacity: {{f.opacity}}">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #3346C4">ENDPOINT</span>
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 26px; font-weight: 700; margin-top: -6px">{{f.title}}</span>
+<span style="height: 44px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E3E2EC"></span>
+</div>
+<dc-import name="NavBar" active="{{f.active}}" pressed="{{f.pressed}}" hint-size="390px,76px"></dc-import>
+</div>
+<span style="display: flex; gap: 10px; align-items: flex-start"><span style="width: 24px; height: 24px; border-radius: 12px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0">{{f.n}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">{{f.head}}</span><span style="font-size: 13px; color: #5B5F66; line-height: 1.5">{{f.body}}</span></span></span>
+</div>
+<sc-if value="{{f.arrow}}" hint-placeholder-val="{{ true }}"><svg width="36" height="230" viewBox="0 0 36 230" aria-hidden="true"><path d="M6 115h22M20 107l8 8-8 8" fill="none" stroke="#9A98B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px">
+<section style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">N3</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 24px; font-weight: 700">สถานะ</h2></div>
+<sc-for list="{{states}}" as="s" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 20px">
+<div style="width: 390px; border-radius: 12px; overflow: hidden; border: 1px solid #E3E2EC; flex-shrink: 0"><dc-import name="NavBar" active="{{s.active}}" pressed="{{s.pressed}}" badge="{{s.badge}}" tabs="{{s.tabs}}" hint-size="390px,76px"></dc-import></div>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">{{s.name}}</span><span style="font-size: 13px; color: #5B5F66; line-height: 1.5">{{s.note}}</span></span>
+</div>
+</sc-for>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">N4</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 24px; font-weight: 700">หน้าย่อย · ซ่อนเมนูล่าง</h2></div>
+<div style="display: flex; gap: 20px; align-items: flex-start">
+<div style="width: 300px; border-radius: 16px; overflow: hidden; border: 1px solid #E3E2EC; background: #F6F6FA; flex-shrink: 0">
+<div style="background: #FFFFFF; border-bottom: 1px solid #E3E2EC; padding: 10px 8px; display: flex; align-items: center; gap: 4px">
+<span aria-hidden="true" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17191C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 17px; font-weight: 700">รอบเช้า · แม่ริม</span><span style="font-size: 12px; color: #5B5F66">งานจัดส่ง › รายละเอียด</span></span>
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 10px"><span style="height: 60px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E3E2EC"></span><span style="height: 90px; border-radius: 12px; background: #FFFFFF; border: 1.5px solid #3346C4"></span><span style="height: 40px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E3E2EC"></span></div>
+<div style="padding: 12px 16px 16px; background: #FFFFFF; border-top: 1px solid #E3E2EC"><span style="display: block; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%)"></span></div>
+</div>
+<ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #3A3E44; line-height: 1.55">
+<li>หน้ารายละเอียด / สร้างงาน / ฟอร์ม เปิดทับแบบเลื่อนจากขวา และ<strong>ซ่อนเมนูล่าง</strong> ให้มีที่ให้ปุ่มหลัก</li>
+<li>มีปุ่มกลับ ‹ มุมซ้ายบนเสมอ และปัดขอบซ้ายเพื่อกลับได้</li>
+<li>บรรทัดรองบอกว่าอยู่ใต้เมนูไหน (งานจัดส่ง › รายละเอียด)</li>
+<li>กลับมาแล้วเมนูล่างเลื่อนขึ้นมาใหม่ ที่แท็บเดิม</li>
+</ul>
+</div>
+</section>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; font-weight: 700; color: #3346C4">N5</span><h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 24px; font-weight: 700">กติกาการสลับเมนู</h2></div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{rules}}" as="r" hint-placeholder-count="4">
+<div style="background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 17px; font-weight: 700">{{r.head}}</span>
+<span style="font-size: 14px; color: #3A3E44; line-height: 1.55">{{r.body}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1820}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+tabs: [
+{ key: 'orders', title: 'ออเดอร์', desc: 'หน้าแรกหลังเข้าสู่ระบบ' },
+{ key: 'jobs', title: 'งานจัดส่ง', desc: 'รายการงาน + ยืนยันส่งทีละจุด' },
+{ key: 'account', title: 'บัญชี', desc: 'โหมดมืด · ออกจากระบบ' }
+],
+flow: [
+{ n: '1', head: 'แตะ', body: 'ปุ่มที่แตะขึ้นพื้นเทาทันที (ภายใน 100ms) ให้รู้ว่ากดโดนแล้ว', active: 'orders', pressed: 'jobs', title: 'ออเดอร์', opacity: '1', arrow: true },
+{ n: '2', head: 'สลับ', body: 'พื้นครามเลื่อนมาที่ปุ่มใหม่ 200ms · เนื้อหาเก่าจางออก เนื้อหาใหม่จางเข้า (ไม่เลื่อนซ้าย-ขวา)', active: 'jobs', pressed: 'none', title: 'งานจัดส่ง', opacity: '0.45', arrow: true },
+{ n: '3', head: 'พร้อมใช้', body: 'หัวข้อหน้าเปลี่ยน · ตำแหน่งเลื่อนและตัวกรองของหน้าเดิมยังจำไว้', active: 'jobs', pressed: 'none', title: 'งานจัดส่ง', opacity: '1', arrow: false }
+],
+states: [
+{ name: 'ปกติ', note: 'ไอคอนเส้น เทา #5B5F66', active: 'orders', pressed: 'none', badge: 'false', tabs: '3' },
+{ name: 'กดค้าง', note: 'พื้นเทา #E3E2EC ขณะนิ้วแตะ', active: 'orders', pressed: 'account', badge: 'false', tabs: '3' },
+{ name: 'มีตัวเลข', note: 'งานที่ยังส่งไม่ครบ · เกิน 99 แสดง 99+', active: 'orders', pressed: 'none', badge: 'true', tabs: '3' },
+{ name: '5 เมนู (อนาคต)', note: 'ถ้าเปิดเมนูแผนที่/สรุปผลที่ปิดไว้ในโค้ด · ไม่เกิน 5', active: 'map', pressed: 'none', badge: 'true', tabs: '5' }
+],
+rules: [
+{ head: 'แตะเมนูเดิมซ้ำ', body: 'เลื่อนกลับขึ้นบนสุด ถ้าอยู่บนสุดแล้ว = รีเฟรชรายการ (แทนปุ่มค้นหาที่ใช้รีเฟรชเดิม)' },
+{ head: 'จำสถานะแต่ละเมนู', body: 'แท็บสถานะ ตัวกรอง และตำแหน่งเลื่อน ไม่หายตอนสลับไปมา' },
+{ head: 'URL ตามเมนู', body: 'แต่ละเมนูมี path ของตัวเอง กดย้อนกลับของเบราว์เซอร์ได้ถูกต้อง' },
+{ head: 'จอกว้าง ≥ 992px', body: 'เมนูล่างย้ายไปเป็นแถบด้านซ้ายแทน (ดูบอร์ดเดสก์ท็อป)' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

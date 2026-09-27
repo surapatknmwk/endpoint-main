@@ -1,0 +1,4 @@
+# local artifacts of scripts/district_distance_batch.py
+scripts/.venv/
+scripts/.cache/
+scripts/__pycache__/

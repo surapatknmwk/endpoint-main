@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>เมนูล่าง (component)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<nav aria-label="เมนูหลัก" style="width: 390px; height: 76px; box-sizing: border-box; padding-bottom: 8px; background: #FFFFFF; border-top: 1px solid #E3E2EC; display: flex; font-family: 'Sarabun', sans-serif; color: #5B5F66">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="3">
+<a href="#" aria-current="{{it.current}}" style="flex-grow: 1; flex-basis: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: {{it.color}}; font-size: 12px; font-weight: {{it.weight}}">
+<span style="position: relative; width: 56px; height: 30px; border-radius: 15px; background: {{it.pill}}; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{it.d}}"></path></svg>
+<sc-if value="{{it.hasBadge}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; top: -2px; right: 8px; min-width: 18px; height: 18px; padding: 0 5px; box-sizing: border-box; border-radius: 9px; border: 2px solid #FFFFFF; background: #B42318; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{it.badge}}</span></sc-if>
+</span>{{it.label}}</a>
+</sc-for>
+</nav>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"active":{"editor":"enum","options":["orders","jobs","map","summary","account"],"default":"orders"},"tabs":{"editor":"enum","options":["3","5"],"default":"3"},"pressed":{"editor":"enum","options":["none","orders","jobs","map","summary","account"],"default":"none"},"badge":{"editor":"boolean","default":false},"$preview":{"width":390,"height":76}}'>
+class Component extends DCLogic {
+renderVals() {
+const D = {
+orders: { label: 'ออเดอร์', d: 'M21 8 12 3 3 8v8l9 5 9-5zM3 8l9 5 9-5M12 13v8' },
+jobs: { label: 'งานจัดส่ง', d: 'M3 6h11v10H3zM14 9h4l3 3v4h-7M5.2 17.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0-3.6 0M15.2 17.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0-3.6 0' },
+map: { label: 'แผนที่', d: 'M9 4 3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14' },
+summary: { label: 'สรุปผล', d: 'M4 20V11M10 20V5M16 20v-7M21 20H3' },
+account: { label: 'บัญชี', d: 'M8 8a4 4 0 1 0 8 0a4 4 0 1 0-8 0M4 21c0-4 4-6 8-6s8 2 8 6' }
+};
+const five = String(this.props.tabs ?? '3') === '5';
+const keys = five ? ['orders', 'jobs', 'map', 'summary', 'account'] : ['orders', 'jobs', 'account'];
+const active = this.props.active ?? 'orders';
+const pressed = this.props.pressed ?? 'none';
+const badgeOn = this.props.badge === true || this.props.badge === 'true';
+return {
+items: keys.map((k) => {
+const on = k === active;
+const press = k === pressed;
+return {
+label: D[k].label, d: D[k].d,
+current: on ? 'page' : 'false',
+color: on ? '#3346C4' : (press ? '#17191C' : '#5B5F66'),
+weight: on ? 700 : 500,
+pill: on ? '#E9E6FC' : (press ? '#E3E2EC' : 'transparent'),
+hasBadge: badgeOn && k === 'jobs',
+badge: '3'
+};
+})
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>งานจัดส่ง</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #F6F6FA; font-family: 'Sarabun', sans-serif; color: #17191C; box-sizing: border-box">
+
+<header style="padding: 24px 20px 12px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; background: linear-gradient(90deg, #3346C4, #5B34C9); -webkit-background-clip: text; background-clip: text; color: transparent">ENDPOINT</span>
+<h1 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.2">งานจัดส่ง</h1>
+</div>
+<div style="display: flex; gap: 4px; padding: 4px; background: #E9E8F2; border-radius: 12px">
+<button type="button" style="flex-grow: 1; flex-basis: 0; height: 40px; border: 0; border-radius: 9px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(23,25,28,0.12); font-size: 15px; font-weight: 600; color: #17191C">กำลังส่ง <span style="color: #3346C4">3</span></button>
+<button type="button" style="flex-grow: 1; flex-basis: 0; height: 40px; border: 0; border-radius: 9px; background: transparent; font-size: 15px; font-weight: 500; color: #4F535A">ส่งครบแล้ว</button>
+</div>
+</header>
+
+<main style="padding: 4px 20px 0; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{jobs}}" as="j" hint-placeholder-count="3">
+<a href="#" style="display: flex; flex-direction: column; gap: 12px; background: #FFFFFF; border: 1px solid #E3E2EC; border-radius: 14px; padding: 16px; text-decoration: none; color: #17191C">
+<div style="display: flex; align-items: flex-start; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1">
+<span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 17px; font-weight: 600">{{j.name}}</span>
+<span style="font-size: 13px; color: #5B5F66">{{j.meta}}</span>
+</div>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B6F76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 4px" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #3A3E44">
+<span style="width: 10px; height: 10px; border-radius: 5px; border: 2px solid #3346C4; box-sizing: border-box; flex-shrink: 0"></span>
+<span style="white-space: nowrap">{{j.from}}</span>
+<span style="flex-grow: 1; border-top: 2px dotted #CCCBDA; min-width: 16px"></span>
+<span style="white-space: nowrap">{{j.to}}</span>
+<span style="width: 10px; height: 10px; border-radius: 5px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); flex-shrink: 0"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 13px">
+<span style="color: #3A3E44">ส่งแล้ว <strong style="color: #17191C">{{j.done}}</strong> จาก {{j.total}} จุด</span>
+<span style="color: {{j.nextColor}}; font-weight: 600">{{j.next}}</span>
+</div>
+<div style="display: flex; gap: 3px">
+<sc-for list="{{j.segs}}" as="s" hint-placeholder-count="5">
+<span style="flex-grow: 1; height: 6px; border-radius: 3px; background: {{s.c}}"></span>
+</sc-for>
+</div>
+</div>
+</a>
+</sc-for>
+</main>
+
+<button type="button" style="position: absolute; right: 20px; bottom: 96px; height: 56px; padding: 0 22px 0 18px; border: 0; border-radius: 28px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); color: #FFFFFF; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; box-shadow: 0 6px 16px rgba(70,64,200,0.32)">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>สร้างงานใหม่</button>
+
+<nav aria-label="เมนูหลัก" style="position: absolute; left: 0; right: 0; bottom: 0; height: 76px; background: #FFFFFF; border-top: 1px solid #E3E2EC; display: flex; padding-bottom: 8px; box-sizing: border-box">
+<a href="#" style="flex-grow: 1; flex-basis: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #5B5F66; font-size: 12px; font-weight: 500">
+<span style="width: 56px; height: 30px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="M3 8l9 5 9-5M12 13v8"></path></svg></span>ออเดอร์</a>
+<a href="#" aria-current="page" style="flex-grow: 1; flex-basis: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #3346C4; font-size: 12px; font-weight: 700">
+<span style="width: 56px; height: 30px; border-radius: 15px; background: #E9E6FC; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="17.5" r="1.8"></circle><circle cx="17" cy="17.5" r="1.8"></circle></svg></span>งานจัดส่ง</a>
+<a href="#" style="flex-grow: 1; flex-basis: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #5B5F66; font-size: 12px; font-weight: 500">
+<span style="width: 56px; height: 30px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg></span>บัญชี</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+const mk = (done, total) => Array.from({ length: total }, (_, i) => ({ c: i < done ? 'linear-gradient(135deg, #3346C4 0%, #5B34C9 100%)' : '#E3E2EC' }));
+return {
+jobs: [
+{ name: 'รอบเช้า · แม่ริม', meta: 'JOB-0021 · นัดส่ง 25 ก.ย.', from: 'ช้างเผือก', to: 'ริมใต้', done: 2, total: 5, segs: mk(2, 5), next: 'ถัดไป: คุณวิชัย', nextColor: '#3346C4' },
+{ name: 'รอบบ่าย · ในเมือง', meta: 'JOB-0022 · นัดส่ง 25 ก.ย.', from: 'ช้างเผือก', to: 'หนองหอย', done: 0, total: 4, segs: mk(0, 4), next: 'ยังไม่เริ่ม', nextColor: '#5B5F66' },
+{ name: 'JOB-0019', meta: 'นัดส่ง 24 ก.ย.', from: 'สุเทพ', to: 'สันผีเสื้อ', done: 3, total: 4, segs: mk(3, 4), next: 'เหลือ 1 จุด', nextColor: '#8A5A00' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

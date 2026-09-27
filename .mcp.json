@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "endpoint-postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://admin:admin123@localhost:5433/endpoint_db"
+      ]
+    }
+  }
+}

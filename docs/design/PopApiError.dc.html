@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>ระบบผิดพลาด</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; font-family: 'Sarabun', sans-serif; color: #17191C">
+<div style="position: absolute; left: 0; top: 0"><dc-import name="Backdrop" kind="orders" hint-size="390px,844px"></dc-import></div>
+<div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: rgba(23,25,28,0.5)"><section role="dialog" aria-label="แผนที่ คุณวิชัย แสงทอง" style="background: #FFFFFF; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; overflow: hidden">
+<div style="position: relative; height: 300px; background: #E8ECE4">
+<svg width="390" height="300" viewBox="0 0 390 300" aria-hidden="true" style="position: absolute; left: 0; top: 0"><path d="M-10 210 C 90 180, 160 240, 400 150" stroke="#FFFFFF" stroke-width="14" fill="none"></path><path d="M120 -10 L 170 310" stroke="#FFFFFF" stroke-width="10" fill="none"></path><path d="M260 -10 C 240 90, 300 170, 280 310" stroke="#FFFFFF" stroke-width="8" fill="none"></path><rect x="30" y="40" width="70" height="50" rx="6" fill="#DCE3D6"></rect><rect x="200" y="30" width="44" height="80" rx="6" fill="#DCE3D6"></rect><rect x="300" y="220" width="70" height="50" rx="6" fill="#CFE0EE"></rect></svg>
+<span style="position: absolute; left: 179px; top: 108px; width: 32px; height: 42px; display: flex; justify-content: center"><svg width="32" height="42" viewBox="0 0 32 42" aria-hidden="true"><path d="M16 41S2 26 2 15a14 14 0 0 1 28 0c0 11-14 26-14 26z" fill="#3346C4"></path><circle cx="16" cy="15" r="5.5" fill="#FFFFFF"></circle></svg></span>
+<span style="position: absolute; left: 12px; bottom: 10px; font-size: 11px; color: #4F535A; background: rgba(255,255,255,0.8); padding: 2px 6px; border-radius: 4px">[แผนที่ Google Maps]</span>
+<button type="button" aria-label="ปิด" style="position: absolute; right: 12px; top: 12px; width: 44px; height: 44px; border: 0; border-radius: 22px; background: #FFFFFF; box-shadow: 0 2px 8px rgba(23,25,28,0.18); display: flex; align-items: center; justify-content: center; color: #17191C"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+<div style="padding: 18px 20px 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 20px; font-weight: 700">คุณวิชัย แสงทอง</h2>
+<span style="font-size: 14px; color: #4F535A; line-height: 1.45">12 ม.3 ต.ริมใต้ อ.แม่ริม จ.เชียงใหม่ 50180</span>
+</div>
+<button type="button" style="height: 52px; border: 0; border-radius: 12px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8z"></path></svg>นำทางด้วย Google Maps</button>
+<div style="display: flex; gap: 8px">
+<button type="button" style="flex-grow: 1; flex-basis: 0; height: 44px; border: 1px solid #CCCBDA; border-radius: 10px; background: #FFFFFF; font-size: 14px; font-weight: 600">โทรหาลูกค้า</button>
+<button type="button" style="flex-grow: 1; flex-basis: 0; height: 44px; border: 1px solid #CCCBDA; border-radius: 10px; background: #FFFFFF; font-size: 14px; font-weight: 600">คัดลอกที่อยู่</button>
+</div>
+</div>
+</section></div>
+
+<section role="alertdialog" aria-label="เชื่อมต่อระบบไม่สำเร็จ" style="position: absolute; left: 20px; right: 20px; top: 210px; background: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 16px 40px rgba(23,25,28,0.24)">
+<span style="width: 48px; height: 48px; border-radius: 24px; background: #FDE8E6; color: #B42318; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h0"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 22px; font-weight: 700">บันทึกไม่สำเร็จ</h2>
+<p style="margin: 0; font-size: 15px; color: #4F535A; line-height: 1.55">ระบบขัดข้องชั่วคราว ข้อมูลที่กรอกไว้ยังอยู่ ลองอีกครั้งได้เลย ถ้ายังไม่ได้ให้แจ้งผู้ดูแลระบบ</p>
+</div>
+<details style="background: #F2F2F8; border-radius: 10px; padding: 10px 12px; font-size: 13px; color: #4F535A">
+<summary style="font-weight: 600; cursor: pointer">รายละเอียดสำหรับผู้ดูแล</summary>
+<span style="display: block; margin-top: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px">[500] POST /orders · Internal Server Error</span>
+</details>
+<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px">
+<button type="button" style="height: 52px; border: 0; border-radius: 12px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); color: #FFFFFF; font-size: 16px; font-weight: 600">ลองอีกครั้ง</button>
+<button type="button" style="height: 52px; border: 1px solid #CCCBDA; border-radius: 12px; background: #FFFFFF; color: #17191C; font-size: 16px; font-weight: 600">ปิด</button>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

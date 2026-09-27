@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>ยืนยันยกเลิกออเดอร์</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; font-family: 'Sarabun', sans-serif; color: #17191C">
+<div style="position: absolute; left: 0; top: 0"><dc-import name="Backdrop" kind="orders" hint-size="390px,844px"></dc-import></div>
+<div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: rgba(23,25,28,0.5)"></div>
+
+<section role="alertdialog" aria-label="ยืนยันยกเลิกออเดอร์" style="position: absolute; left: 20px; right: 20px; top: 210px; background: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 16px 40px rgba(23,25,28,0.24)">
+<span style="width: 48px; height: 48px; border-radius: 24px; background: #FDE8E6; color: #B42318; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 22px; font-weight: 700">ยกเลิก 2 ออเดอร์?</h2>
+<p style="margin: 0; font-size: 15px; color: #4F535A; line-height: 1.55">ออเดอร์จะเปลี่ยนเป็นสถานะ “ยกเลิก” และนำไปจัดเข้างานไม่ได้อีก</p>
+</div>
+<ul style="list-style: none; margin: 0; padding: 12px 14px; background: #F2F2F8; border-radius: 12px; display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+<li style="display: flex; justify-content: space-between"><span style="font-weight: 600">คุณสมศรี ใจดี</span><span style="color: #5B5F66; font-size: 13px">#OD-0142</span></li>
+<li style="display: flex; justify-content: space-between"><span style="font-weight: 600">ร้านป้าแดง</span><span style="color: #5B5F66; font-size: 13px">#OD-0139</span></li>
+</ul>
+<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px">
+<button type="button" style="height: 52px; border: 0; border-radius: 12px; background: #B42318; color: #FFFFFF; font-size: 16px; font-weight: 600">ยกเลิกออเดอร์ 2 รายการ</button>
+<button type="button" style="height: 52px; border: 1px solid #CCCBDA; border-radius: 12px; background: #FFFFFF; color: #17191C; font-size: 16px; font-weight: 600">ไม่ใช่ตอนนี้</button>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

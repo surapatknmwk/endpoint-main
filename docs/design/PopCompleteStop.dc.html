@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>ยืนยันส่งจุดนี้แล้ว</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Sarabun:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Sarabun',sans-serif;background:#F6F6FA;color:#17191C}
+button,input{font-family:inherit}
+a{color:#3346C4}a:hover{color:#26369B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; font-family: 'Sarabun', sans-serif; color: #17191C">
+<div style="position: absolute; left: 0; top: 0"><dc-import name="Backdrop" kind="jobs" hint-size="390px,844px"></dc-import></div>
+<div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: rgba(23,25,28,0.5)"></div>
+
+<section role="dialog" aria-label="ยืนยันส่งจุดนี้แล้ว" style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFFFF; border-radius: 20px 20px 0 0; padding: 8px 20px 28px; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: center; width: 40px; height: 4px; border-radius: 2px; background: #D1D0DD"></span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: #3346C4">จุดที่ 3 จาก 5</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 22px; font-weight: 700">ส่งของถึงแล้วใช่ไหม?</h2>
+</div>
+<div style="display: flex; gap: 12px; padding: 14px; border: 1px solid #E3E2EC; border-radius: 14px">
+<span style="width: 40px; height: 40px; border-radius: 20px; background: #EEEBFD; color: #3346C4; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 17px; font-weight: 600">คุณวิชัย แสงทอง</span><span style="font-size: 14px; color: #4F535A; line-height: 1.45">12 ม.3 ต.ริมใต้ อ.แม่ริม จ.เชียงใหม่</span><span style="font-size: 14px; color: #4F535A">ตู้เย็น 1 เครื่อง</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #3A3E44"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>จะบันทึกว่าส่งแล้ว เวลา <strong>10:32</strong> · ต่อไปคือจุดที่ 4 ร้านป้าแดง</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<button type="button" style="height: 56px; border: 0; border-radius: 12px; background: linear-gradient(135deg, #3346C4 0%, #5B34C9 100%); color: #FFFFFF; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>ยืนยัน ส่งแล้ว</button>
+<button type="button" style="height: 52px; border: 1px solid #CCCBDA; border-radius: 12px; background: #FFFFFF; color: #17191C; font-size: 16px; font-weight: 600">ยังไม่ส่ง</button>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
