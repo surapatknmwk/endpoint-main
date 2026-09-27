@@ -1,0 +1,29 @@
+# systemd unit for endpoint-service (Spring Boot jar).
+# Installed to /etc/systemd/system/endpoint.service by setup-server.sh.
+[Unit]
+Description=Endpoint Services (Spring Boot)
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=endpoint
+Group=endpoint
+WorkingDirectory=/opt/endpoint
+EnvironmentFile=/etc/endpoint/endpoint.env
+# Heap capped at 512 MB; SerialGC has the smallest footprint on <= 2 vCPU.
+ExecStart=/usr/bin/java -Xms256m -Xmx512m -XX:MaxMetaspaceSize=192m -XX:+UseSerialGC -Xss512k \
+  -XX:+ExitOnOutOfMemoryError -jar /opt/endpoint/app.jar
+# JVM exits with 143 on SIGTERM -- treat as a clean stop.
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

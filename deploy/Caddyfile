@@ -1,0 +1,32 @@
+# Installed to /etc/caddy/Caddyfile by setup-server.sh (example.com is replaced with the real domain).
+# Caddy obtains and renews the HTTPS certificate automatically.
+example.com {
+	encode zstd gzip
+	header -Server
+
+	@api path /endpoint-authen-service/* /endpoint-core-service/* /endpoint-master-service/* /endpoint-search-service/*
+	handle @api {
+		reverse_proxy 127.0.0.1:8080
+	}
+
+	# React SPA (endpoint-webapp/dist). handle blocks are mutually exclusive, so
+	# try_files never rewrites API calls to index.html.
+	handle {
+		root * /var/www/endpoint
+		# Vite emits content-hashed files under /assets; everything else (index.html,
+		# SPA routes) must be revalidated so a new deploy shows up immediately.
+		@hashed path /assets/*
+		@notHashed not path /assets/*
+		header @hashed Cache-Control "public, max-age=31536000, immutable"
+		header @notHashed Cache-Control "no-cache"
+		try_files {path} /index.html
+		file_server
+	}
+
+	log {
+		output file /var/log/caddy/endpoint.log {
+			roll_size 10MiB
+			roll_keep 5
+		}
+	}
+}

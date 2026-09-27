@@ -46,7 +46,10 @@ google:
 | `google.maps.api-key` | `GOOGLE_MAPS_API_KEY` | Yes | Google Cloud API key with **Routes API** enabled. If blank, every call fails with `ExternalApiException` before any HTTP request is made. |
 | `google.maps.routes-base-url` | — | No | Defaults to `https://routes.googleapis.com`; overridable for testing (e.g. pointing at a mock server). |
 
-<!-- TODO: confirm with team — application.yml in this repo currently has a literal API key value committed for google.maps.api-key instead of only the ${GOOGLE_MAPS_API_KEY:} placeholder. This looks like a checked-in secret and should be rotated/removed, independent of this doc. -->
+A literal key was committed to `application.yml` in earlier revisions; it has been replaced by the
+placeholder above, but it is still in git history — that key must be rotated in Google Cloud.
+Local dev now needs `export GOOGLE_MAPS_API_KEY=...` for uncached Google calls; on the VPS it goes in
+`/etc/endpoint/endpoint.env` (see [deploy/README.md](../../deploy/README.md)).
 
 ## API Endpoint / Contract
 

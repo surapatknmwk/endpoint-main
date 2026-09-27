@@ -129,7 +129,7 @@ psql -v ON_ERROR_STOP=1 -f permissions-jobs-data.sql
 | `DB_HOST` / `DB_PORT` / `DB_NAME` | ที่อยู่ database จากขั้นที่ 1 (`DB_NAME=endpoint_db`) |
 | `DB_USERNAME` / `DB_PASSWORD` | `endpoint_app` และรหัสผ่านจากขั้นที่ 1 (สังเกต: ฝั่งแอปชื่อ `DB_USERNAME` ส่วนสคริปต์ขั้นที่ 3 ใช้ `DB_USER`) |
 | `JWT_SECRET` | ข้อความสุ่มยาวอย่างน้อย 32 ตัวอักษร เช่น `openssl rand -base64 48` |
-| `GOOGLE_MAPS_APIKEY` | API key ที่เปิด Routes API (ไม่ใส่ = ใช้ค่าใน `application.yml`) |
+| `GOOGLE_MAPS_API_KEY` | API key ที่เปิด Routes API (ไม่ใส่ = เรียก Google ไม่ได้ แต่ระยะที่ cache ไว้ใน `subdistrict_distances` ยังใช้ได้) |
 | `SERVER_PORT` | ไม่บังคับ ค่าเริ่มต้น `8080` |
 | `JWT_EXPIRATION` | ไม่บังคับ อายุ token (ms) ค่าเริ่มต้น `3600000` (1 ชม.) |
 

@@ -5,6 +5,10 @@ endpoint main github
 
 สร้างและตั้งค่า PostgreSQL ให้พร้อมใช้งาน (ตั้งแต่สร้าง database จนต่อ backend ได้): [db/README.md](db/README.md)
 
+## Deploy
+
+ตั้ง VPS และ deploy (Caddy + systemd + PostgreSQL บนเครื่องเดียว): [deploy/README.md](deploy/README.md)
+
 ## Git Submodules
 
 โปรเจกต์นี้ใช้ git submodules สำหรับ:
